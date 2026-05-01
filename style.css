@@ -1,0 +1,109 @@
+/* Estilos generales del cuerpo de la página */
+body {
+    background-color: #f5f4f0;
+    color: #333333;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden; /* Evita scrolls innecesarios */
+}
+
+/* Contenedor principal de pantalla dividida */
+.split-screen {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Parte izquierda: Contenido y texto */
+.left-side {
+    flex: 1; /* Ocupa el 50% */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #f5f4f0;
+}
+
+/* Parte derecha: Imagen a pantalla completa */
+.right-side {
+    flex: 1; /* Ocupa el otro 50% */
+    background: url('assets/logo.jpeg') no-repeat center center;
+    background-size: contain; /* Se ve la foto entera */
+    background-color: #ffffff; /* Fondo blanco para la imagen si no rellena todo */
+    border-left: 1px solid #dcd7ce;
+}
+
+/* Contenedor interno para el texto */
+.container {
+    text-align: center; /* Centrar texto */
+    width: 100%;
+    max-width: 500px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Centrar elementos horizontalmente */
+}
+
+/* Estilo del título principal */
+h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    color: #047835;
+}
+
+/* Tarjeta con efecto de cristal */
+.glass-card {
+    background: rgba(255, 255, 255, 0.5); /* Un poco más opaca para leer mejor sobre el fondo claro */
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.glass-card p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #444;
+    text-align: justify; /* Texto justificado */
+}
+
+/* Estilo del botón (GitHub) */
+.link-card {
+    display: inline-block;
+    background: #047835;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 35px;
+    border-radius: 30px;
+    transition: 0.3s;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(4, 120, 53, 0.2);
+}
+
+.link-card:hover {
+    background: #03632c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(4, 120, 53, 0.3);
+}
+
+/* Responsive: si la pantalla es muy estrecha, se pone uno encima de otro */
+@media (max-width: 768px) {
+    .split-screen {
+        flex-direction: column;
+    }
+    .right-side {
+        height: 40vh;
+    }
+    .left-side {
+        height: 60vh;
+        padding: 20px;
+    }
+    .container {
+        height: auto;
+        gap: 20px;
+    }
+}
