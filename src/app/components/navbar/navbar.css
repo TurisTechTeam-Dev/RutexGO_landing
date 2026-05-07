@@ -1,0 +1,47 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  height: 80px;
+  background-color: var(--rutex-blanco);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-logo img {
+  height: 50px;
+  cursor: pointer;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--rutex-gris-oscuro);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--rutex-bosque);
+}
+
+.nav-github {
+  border: 2px solid var(--rutex-bosque);
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.nav-github:hover {
+  background-color: var(--rutex-bosque);
+  color: var(--rutex-blanco) !important;
+}

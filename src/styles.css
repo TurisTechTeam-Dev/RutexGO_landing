@@ -1,0 +1,48 @@
+:root {
+  /* Paleta Corporativa RuteX Go*/
+  --rutex-bosque: #007a3d;
+  --rutex-esmeralda: #4caf70;
+  --rutex-blanco: #ffffff;
+  --rutex-gris-claro: #7a8587;
+  --rutex-gris-oscuro: #2f3333;
+  --rutex-negro: #0b0b0b;
+
+  /* Tipografía*/
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--rutex-blanco);
+  color: var(--rutex-gris-oscuro);
+}
+
+/* Efecto para los botones que pediste */
+.btn-primary {
+  background-color: var(--rutex-esmeralda);
+  color: white;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05); /* Efecto de escala */
+  box-shadow: 0 4px 15px rgba(76, 175, 112, 0.4); /* Brillo esmeralda */
+}
+
+.btn-github {
+  background: transparent;
+  border: 2px solid var(--rutex-gris-oscuro);
+  color: var(--rutex-gris-oscuro);
+  transition: all 0.3s ease;
+}
+
+.btn-github:hover {
+  background-color: var(--rutex-gris-oscuro);
+  color: var(--rutex-blanco);
+}
+
+html {
+  scroll-behavior: smooth;
+}

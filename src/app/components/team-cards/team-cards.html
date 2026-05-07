@@ -1,0 +1,14 @@
+<div class="card" [class.tutor-border]="esTutora">
+  <div class="image-container">
+    <img [src]="fotoUrl" [alt]="nombre" [class.tutor-img]="esTutora">
+  </div>
+  
+  <div class="info">
+    <h3 class="name">{{ nombre }}</h3>
+    <p class="role">{{ rol }}</p>
+    
+    <a *ngIf="githubUrl" [href]="githubUrl" target="_blank" class="github-btn">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+  </div>
+</div>

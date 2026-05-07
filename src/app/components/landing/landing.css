@@ -1,0 +1,136 @@
+/* --- SECCIÓN PRINCIPAL HERO --- */
+.landing-hero {
+  background-color: var(--rutex-bosque);
+  color: var(--rutex-blanco);
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  min-height: 100vh;       
+  width: 100%;
+  padding: 0 4%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* --- CONTENEDOR DE LAS 3 COLUMNAS --- */
+.hero-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 100%;
+  gap: 20px;
+  margin: 0 auto;
+}
+
+/* --- COLUMNA 1: MAPA --- */
+.map-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-map {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.4));
+}
+
+/* --- COLUMNA 2: TEXTO --- */
+.text-content {
+  flex: 1.2;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.hero-subtext {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-bottom: 40px;
+}
+
+/* --- BOTONES --- */
+.hero-actions {
+  display: flex;
+  gap: 25px;
+}
+
+.btn-primary, .btn-outline {
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  background-color: var(--rutex-esmeralda);
+  color: white !important;
+  border: none;
+}
+
+.btn-outline {
+  border: 2px solid var(--rutex-blanco);
+  color: var(--rutex-blanco) !important;
+  background: transparent;
+}
+
+/* --- COLUMNA 3: MÓVIL / CARRUSEL --- */
+.carousel-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.phone-mockup {
+  width: 300px;
+  height: 610px;
+  background: #1a1a1a;
+  border: 12px solid #2f3333;
+  border-radius: 45px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+
+/* --- RESPONSIVO --- */
+@media (max-width: 1024px) {
+  .hero-container {
+    gap: 15px;
+  }
+  .hero-title { font-size: 3rem; }
+}
+
+@media (max-width: 968px) {
+  .hero-container {
+    flex-direction: column; 
+    text-align: center;
+    gap: 60px;
+  }
+  .text-content { text-align: center; }
+  .hero-actions { justify-content: center; }
+}

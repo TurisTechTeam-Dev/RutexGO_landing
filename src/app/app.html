@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+<main class="main-layout">
+  <div class="left-side">
+    <app-landing></app-landing>
+  </div>
+
+  <div class="right-side" id="equipo"> 
+    <section class="team-section">
+      <h2 class="section-title">Nuestro Equipo</h2>
+      
+      <div class="team-grid">
+        <app-team-cards 
+          *ngFor="let est of estudiantes"
+          [nombre]="est.nombre"
+          [rol]="est.rol"
+          [fotoUrl]="est.foto"
+          [githubUrl]="est.github">
+        </app-team-cards>
+      </div>
+
+      <div class="tutor-container">
+        <h3 class="tutor-label">Tutora</h3>
+        <app-team-cards 
+          [nombre]="tutora.nombre"
+          [rol]="tutora.rol"
+          [fotoUrl]="tutora.foto"
+          [esTutora]="true">
+        </app-team-cards>
+      </div>
+    </section>
+  </div>
+</main>
+
+<app-footer></app-footer>
