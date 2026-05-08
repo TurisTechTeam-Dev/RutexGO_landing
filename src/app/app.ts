@@ -21,16 +21,24 @@ import { TeamCardsComponent } from './components/team-cards/team-cards';
 export class App {
   // Datos de los 3 estudiantes
   estudiantes = [
-    { nombre: 'Andrés Fernández Expósito', rol: 'Desarrollador Fullstack', foto: 'assets/estudiante1.jpg', github: 'https://github.com/user1' },
-    { nombre: 'Joel Manuel García Villarino', rol: 'Desarrollador FullStack', foto: 'assets/estudiante2.jpg', github: 'https://github.com/user2' },
-    { nombre: 'Diego Vivas Paredes', rol: 'Desarrollador FullStack', foto: 'assets/estudiante3.jpg', github: 'https://github.com/user3' }
+    { nombre: 'Andrés Fernández Expósito', rol: 'Desarrollador Fullstack', foto: 'andres.png', github: 'https://github.com/user1' },
+    { nombre: 'Joel Manuel García Villarino', rol: 'Desarrollador FullStack', foto: 'joel.png', github: 'https://github.com/user2' },
+    { nombre: 'Diego Vivas Paredes', rol: 'Desarrollador FullStack', foto: 'diego.png', github: 'https://github.com/user3' }
   ];
 
   // Datos de la tutora
-  tutora = {
-    nombre: 'Nombre Tutora',
-    rol: 'Guía Estratégica y Mentoría',
-    foto: 'assets/tutora.jpg',
-    github: '' // Opcional
-  };
+  tutora = [
+    {
+      nombre: 'María Mercedes Martínez Fragoso',
+      rol: 'Tutora y Mentora',
+      foto: 'mercedes.png',
+      github: '' // Opcional
+    },
+    {
+      nombre: 'María Francisca Roncero Holgado',
+      rol: 'Amada Lider del Proyecto',
+      foto: 'paqui.png',
+      github: '' // Opcional
+    },
+  ];
 }

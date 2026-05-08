@@ -7,19 +7,17 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: var(--rutex-bosque); /* Consistencia total */
+  background-color: var(--rutex-bosque);
 }
 
-/* El landing y el equipo comparten el mismo fondo */
 .left-side, .right-side {
   width: 100%;
   background-color: var(--rutex-bosque);
 }
 
 .right-side {
-  padding: 80px 5%;
+  padding: 60px 5% 20px 5%;
   box-sizing: border-box;
-  display: block; /* Quitamos el flex-center que apilaba todo */
 }
 
 .team-section {
@@ -30,38 +28,64 @@
 
 .section-title {
   text-align: center;
-  color: var(--rutex-blanco);
+  color: var(--rutex-blanco) !important;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   text-transform: uppercase;
 }
 
-/* ESTO ES LO QUE HACE LA FILA HORIZONTAL */
 .team-grid {
   display: grid;
-  /* Crea columnas automáticas de min 280px. Si hay espacio, se ponen de lado */
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  justify-items: center; 
+  justify-items: center;
   align-items: start;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
+/* --- SECCIÓN TUTORAS COMPACTADA --- */
 .tutor-container {
-  margin-top: 60px;
-  padding-top: 60px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* La tutora queda centrada abajo */
+  align-items: center;
 }
 
-.tutor-label {
-  color: var(--rutex-blanco);
-  font-weight: 700;
-  text-transform: uppercase;
+.tutor-container .section-title {
+  margin-top: 0;
   margin-bottom: 30px;
-  letter-spacing: 2px;
+  font-size: 2.5rem;
+}
+
+.tutor-cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  gap: 30px;
+  width: 100%;
+  justify-content: center;
+}
+
+.tutor-cards-wrapper app-team-cards {
+  width: 100%;
+  display: block;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .right-side {
+    padding: 30px 20px;
+  }
+
+  .team-grid, .tutor-cards-wrapper {
+    gap: 20px;
+    grid-template-columns: minmax(280px, 320px);
+  }
+
+  .tutor-container {
+    padding-top: 15px;
+  }
 }

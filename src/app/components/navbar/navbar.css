@@ -9,11 +9,14 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .navbar-logo img {
   height: 50px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .navbar-links {
@@ -29,7 +32,9 @@
   font-weight: 600;
   font-size: 0.9rem;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
+
 
 .navbar-links a:hover {
   color: var(--rutex-bosque);
@@ -37,11 +42,28 @@
 
 .nav-github {
   border: 2px solid var(--rutex-bosque);
-  padding: 8px 16px;
-  border-radius: 6px;
+  padding: 8px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
 .nav-github:hover {
   background-color: var(--rutex-bosque);
   color: var(--rutex-blanco) !important;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 4%;
+  }
+
+  .navbar-links {
+    gap: 15px;
+  }
+
+  .navbar-logo img {
+    height: 40px;
+  }
 }
