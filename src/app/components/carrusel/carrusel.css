@@ -1,0 +1,46 @@
+.mobile-container {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.phone-frame {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.screen-area {
+  position: absolute;
+  top: 2%;
+  left: 5%;
+  width: 90%;
+  height: 96%;
+  overflow: hidden;
+  background-color: #000;
+  z-index: 1;
+  border-radius: 30px;
+}
+
+.carousel-track {
+  display: flex;
+  width: calc(100% * 18); 
+  height: 100%;
+  animation: scroll-infinite 30s linear infinite;
+}
+
+.carousel-track img {
+  width: calc(100% / 18);
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes scroll-infinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); 
+  }
+}
