@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-carrusel',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './carrusel.html',
   styleUrl: './carrusel.css',
@@ -22,10 +23,10 @@ export class CarruselComponent implements OnInit, OnDestroy {
   }
 
   iniciarAutoplay() {
-    this.pararAutoplay(); // Limpiamos cualquier intervalo previo por seguridad
+    this.pararAutoplay();
     this.intervalo = setInterval(() => {
       this.siguiente();
-    }, 2000); // 2 segundos suele ser mejor para que dé tiempo a ver la foto
+    }, 2000);
   }
 
   pararAutoplay() {
@@ -42,28 +43,44 @@ export class CarruselComponent implements OnInit, OnDestroy {
     this.indiceActual = (this.indiceActual - 1 + this.fotos.length) % this.fotos.length;
   }
 
-  // EVENTOS DE RATÓN
+  // --- LÓGICA DE RATÓN (PC) ---
   onMouseDown(event: MouseEvent) {
-    this.pararAutoplay(); // Detenemos el movimiento automático al tocar
+    this.pararAutoplay();
     this.startX = event.clientX;
   }
 
   onMouseUp(event: MouseEvent) {
     const endX = event.clientX;
-    const diff = this.startX - endX;
+    this.procesarDeslizamiento(this.startX, endX);
+    this.iniciarAutoplay();
+  }
 
-    // Solo cambiamos de foto si el movimiento ha sido mayor a 50px
-    // Esto evita que un simple "click" dispare el cambio
-    if (Math.abs(diff) > 50) {
+  // --- LÓGICA TÁCTIL (MÓVIL) ---
+  onTouchStart(event: TouchEvent) {
+    this.pararAutoplay();
+    // Capturamos la posición del primer dedo que toca la pantalla
+    this.startX = event.touches[0].clientX;
+  }
+
+  onTouchEnd(event: TouchEvent) {
+    // Capturamos dónde terminó el deslizamiento
+    const endX = event.changedTouches[0].clientX;
+    this.procesarDeslizamiento(this.startX, endX);
+    this.iniciarAutoplay();
+  }
+
+  // Función común para calcular la dirección del movimiento
+  private procesarDeslizamiento(inicio: number, fin: number) {
+    const diff = inicio - fin;
+    const umbral = 50;
+
+    if (Math.abs(diff) > umbral) {
       if (diff > 0) {
         this.siguiente();
       } else {
         this.anterior();
       }
     }
-
-    // Al soltar, sea click o arrastre, reiniciamos el contador de cero
-    this.iniciarAutoplay();
   }
 
   ngOnDestroy() {
