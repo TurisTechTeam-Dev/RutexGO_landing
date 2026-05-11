@@ -69,18 +69,23 @@
 .hero-actions {
   display: flex;
   gap: 25px;
+  margin-top: 10px;
 }
 
 .btn-primary, .btn-outline {
-  padding: 16px 32px;
-  border-radius: 12px;
+  width: 220px;
+  height: 65px;
+  border-radius: 14px;
   font-weight: 700;
-  text-decoration: none !important;
+  font-size: 1.1rem;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
+  text-decoration: none !important;
+  cursor: pointer;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  font-size: 1.1rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
 }
 
 .btn-primary {
@@ -92,7 +97,22 @@
 .btn-outline {
   border: 2px solid var(--rutex-blanco);
   color: var(--rutex-blanco) !important;
-  background: transparent;
+  background-color: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(5px);
+}
+
+.btn-primary:hover, .btn-outline:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: #3e8e5d;
+}
+
+.btn-outline:hover {
+  background-color: var(--rutex-blanco);
+  color: var(--rutex-bosque) !important;
 }
 
 /* --- COLUMNA 3: MÓVIL / CARRUSEL --- */
@@ -113,6 +133,13 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
+}
+
+app-carrusel {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 
