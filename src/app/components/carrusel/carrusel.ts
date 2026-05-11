@@ -63,11 +63,19 @@ export class CarruselComponent implements OnInit, OnDestroy {
   }
 
   onTouchEnd(event: TouchEvent) {
-    // Capturamos dónde terminó el deslizamiento
-    const endX = event.changedTouches[0].clientX;
-    this.procesarDeslizamiento(this.startX, endX);
-    this.iniciarAutoplay();
+  const endX = event.changedTouches[0].clientX;
+  const diff = this.startX - endX;
+  const umbral = 30;
+
+  if (Math.abs(diff) > umbral) {
+    if (diff > 0) {
+      this.siguiente();
+    } else {
+      this.anterior();
+    }
   }
+  this.iniciarAutoplay();
+}
 
   // Función común para calcular la dirección del movimiento
   private procesarDeslizamiento(inicio: number, fin: number) {

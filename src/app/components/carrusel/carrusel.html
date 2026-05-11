@@ -1,16 +1,12 @@
 <div class="carousel-viewport" 
      (mousedown)="onMouseDown($event)" 
      (mouseup)="onMouseUp($event)"
-     (touchstart)="onTouchStart($event); $event.preventDefault()" 
+     (touchstart)="onTouchStart($event)" 
      (touchend)="onTouchEnd($event)"
-     style="touch-action: none; user-select: none; -webkit-user-drag: none;">
+     (mouseleave)="iniciarAutoplay()">
   
   <div class="carousel-track" 
        [style.transform]="'translateX(' + (-indiceActual * 100) + '%)'">
-    <img *ngFor="let foto of fotos" 
-         [src]="foto" 
-         class="carousel-img" 
-         draggable="false"
-         style="pointer-events: none;">
+    <img *ngFor="let foto of fotos" [src]="foto" class="carousel-img" draggable="false">
   </div>
 </div>
