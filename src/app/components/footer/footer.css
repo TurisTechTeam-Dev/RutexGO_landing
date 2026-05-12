@@ -38,6 +38,15 @@
   transform: scale(1.05);
 }
 
+.footer-logo-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.footer-logo-link:hover {
+  opacity: 0.8;
+}
+
 .footer-brand p {
   font-size: 0.7rem;
   opacity: 0.8;

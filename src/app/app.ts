@@ -4,6 +4,7 @@ import { FooterComponent } from './components/footer/footer';
 import { NavbarComponent } from './components/navbar/navbar';
 import { LandingComponent } from './components/landing/landing';
 import { TeamCardsComponent } from './components/team-cards/team-cards';
+import { InfoRangos } from "./components/info-rangos/info-rangos";
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,9 @@ import { TeamCardsComponent } from './components/team-cards/team-cards';
     FooterComponent,
     NavbarComponent,
     LandingComponent,
-    TeamCardsComponent
-  ],
+    TeamCardsComponent,
+    InfoRangos
+],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

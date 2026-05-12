@@ -41,7 +41,7 @@
   grid-template-columns: repeat(auto-fit, 320px);
   gap: 30px;
   width: 100%;
-  justify-content: center; /* Centra las tarjetas horizontalmente */
+  justify-content: center;
   margin-bottom: 40px;
 }
 

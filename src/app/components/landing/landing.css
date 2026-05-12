@@ -64,10 +64,41 @@
   margin-bottom: 40px;
 }
 
+/* --- QR --- */
+.qr-download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  padding: 0;
+  min-width: 0;
+}
+
+.qr-download img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+  background: transparent;
+  padding: 0;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.qr-download p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.95);
+  text-align: center;
+}
+
 /* --- BOTONES --- */
 .hero-actions {
   display: flex;
+  align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .btn-primary, .btn-outline {
@@ -92,6 +123,7 @@
   border: none;
 }
 
+/* si mantienes .btn-outline en otros lugares, lo dejamos */
 .btn-outline {
   border: 2px solid var(--rutex-blanco);
   color: var(--rutex-blanco) !important;
@@ -196,6 +228,17 @@ app-carrusel {
     height: 60px;
   }
 
+  .qr-download {
+    width: 160px;
+    min-width: 160px;
+    padding: 6px;
+  }
+
+  .qr-download img {
+    width: 140px;
+    height: 140px;
+  }
+
   .phone-mockup {
     width: 250px;
     height: 520px;
@@ -206,4 +249,18 @@ app-carrusel {
   .hero-title { font-size: 2.2rem; }
   .hero-description { font-size: 1.1rem; }
   .hero-map { max-width: 280px; }
+
+  .qr-download {
+    width: 140px;
+    min-width: 140px;
+  }
+
+  .qr-download img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .qr-download p {
+    font-size: 0.85rem;
+  }
 }
